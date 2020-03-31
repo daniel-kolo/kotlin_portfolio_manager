@@ -6,7 +6,7 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-class User(firstName: String, lastName: String, email: String, password: String){
+class User(firstName: String, lastName: String, email: String, password: String, portfolio: Portfolio){
 
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     @Id
@@ -16,6 +16,6 @@ class User(firstName: String, lastName: String, email: String, password: String)
     val lastName = lastName
     val email = email
     val password = password
-
+    val portfolio = portfolio
 
 }

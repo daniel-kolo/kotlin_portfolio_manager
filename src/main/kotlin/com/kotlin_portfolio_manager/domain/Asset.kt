@@ -1,11 +1,24 @@
 package com.kotlin_portfolio_manager.domain
 
-enum class Type {
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+
+enum class AssetType {
     crypto_currency, stock, bond, currency, commodity
 }
 
-class Asset()
+@Entity
+class Asset(assetType: AssetType, priceBought: Double, currentPrice: Double){
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @Id
+    val Id : Long = 0
 
-// Type for example crypto, stock, bond, oil, forex etc
-// PriceBought
-// currentPrice
+    // comment
+
+    val assetType = assetType
+    val priceBought = priceBought
+    val currentPrice = currentPrice
+}
+
